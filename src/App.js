@@ -7,6 +7,9 @@ function App() {
       <nav>
         <Link to='/band'>Band</Link>
       </nav>
+      <nav>
+        <Link to='/jam'>Jam</Link>
+      </nav>
     </div>
   )
 }

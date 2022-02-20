@@ -1,13 +1,6 @@
 import { Link } from 'react-router-dom'
 import './App.css'
-<<<<<<< Updated upstream
 
-function App() {
-  return (
-    <div>
-      <nav>
-        <Link to='/band'>Band</Link>
-=======
 import background from './images/home_background.png'
 import Button from '@mui/material/Button'
 
@@ -62,7 +55,6 @@ function App() {
         >
           Band
         </Button>
->>>>>>> Stashed changes
       </nav>
     </div>
   )

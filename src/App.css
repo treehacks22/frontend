@@ -1,0 +1,14 @@
+@font-face {
+    font-family: GuitarHero;
+    src: url('Nightmare_Hero_Normal.ttf');
+}
+
+@font-face {
+    font-family: Rocko;
+    src: url('rocko.ttf');
+}
+
+*{
+    margin:0;
+    padding:0;
+}

@@ -135,24 +135,18 @@ function GameView(props) {
       })
     })
 
-    const circleGeometry = new THREE.CircleGeometry(note.radius)
     const circles = []
-<<<<<<< Updated upstream
-    for (let i = 0; i < 4; i++) {
-      circles[i] = new THREE.Mesh(circleGeometry, note.materials[i])
-=======
-
-    const handImages = ['A_Hand.png', 'B_Hand.png', 'C_Hand.png', 'D_Hand.png']
-    const geometry = new THREE.CircleGeometry(30)
+  
+    const handImages = ['A_Hand.png', 'B_Hand.png','C_Hand.png','D_Hand.png']
+    const geometry = new THREE.PlaneGeometry(60, 60, 10, 10)
 
     var textureImage, texture, material
     for (let i = 0; i < 4; i++) {
-      textureImage = require('../images/' + handImages[i])
-      texture = new THREE.TextureLoader().load(textureImage)
-      material = new THREE.MeshBasicMaterial({ map: texture })
+      textureImage = require('../images/' + handImages[i]);
+      texture = new THREE.TextureLoader().load(textureImage);
+      material = new THREE.MeshBasicMaterial( { map: texture } );
       material.transparent = true
       circles[i] = new THREE.Mesh(geometry, material)
->>>>>>> Stashed changes
     }
 
     circles.forEach((circle, idx) => {

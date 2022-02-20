@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import GameDetails from '../components/GameDetails'
+import VideoStream from '../components/VideoStream'
 import GameView from '../components/GameView'
 
 function Band() {
@@ -36,10 +36,8 @@ function Band() {
 
   return (
     <div>
-      <div>
-        <GameDetails></GameDetails>
-      </div>
       <div id='game-canvas'>
+        <VideoStream />
         <GameView
           startGame={startGame}
           renderer={renderer}
@@ -49,7 +47,12 @@ function Band() {
           // key={key}
           // musicDelay={musicDelay}
         ></GameView>
-        {/* <button onClick={() => startGame.current.addMovingNotes()}>Start</button> */}
+        <button
+          onClick={() => startGame.current.addMovingNotes()}
+          className='test'
+        >
+          Start
+        </button>
       </div>
     </div>
   )

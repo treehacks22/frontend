@@ -1,7 +1,9 @@
-import { useEffect, useImperativeHandle } from 'react'
+import { useState, useImperativeHandle } from 'react'
 import * as THREE from 'three'
+import GameDetails from '../components/GameDetails'
 import { songNotes, beatsPerMeasure } from '../lib/song'
 import { addLights } from '../utils/lighting'
+import { setNoteCheck } from '../utils/scoring'
 
 function GameView(props) {
   console.log(songNotes)
@@ -13,6 +15,16 @@ function GameView(props) {
   const key = props.key
   const musicDelay = props.musicDelay
   const noteInterval = props.noteInterval
+  const [stats, setStats] = useState({
+    score: 0,
+    maxStreak: 0,
+    streak: 0,
+    multiplier: 1,
+    hits: 0,
+    misses: 0,
+    totalNotes: 0,
+    rockInput: 0
+  })
 
   const note = {}
 
@@ -224,7 +236,9 @@ function GameView(props) {
           zStartPoint
         )
       }, time)
-      // gameNotes.setNoteCheck(songNote, time)
+      setStats(
+        setNoteCheck(noteInterval, musicDelay, key, songNote, time, stats)
+      )
     })
   }
 
@@ -305,7 +319,11 @@ function GameView(props) {
 
   setup()
 
-  return <div></div>
+  return (
+    <div>
+      <GameDetails stats={stats}></GameDetails>
+    </div>
+  )
 }
 
 export default GameView

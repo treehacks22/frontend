@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+.test {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 #game-canvas {
   position: relative;
   height: 100%;

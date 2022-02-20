@@ -1,7 +1,9 @@
-import { useEffect, useImperativeHandle } from 'react'
+import { useState, useImperativeHandle } from 'react'
 import * as THREE from 'three'
+import GameDetails from '../components/GameDetails'
 import { songNotes, beatsPerMeasure } from '../lib/song'
 import { addLights } from '../utils/lighting'
+import { setNoteCheck } from '../utils/scoring'
 
 function GameView(props) {
   console.log(songNotes)
@@ -13,6 +15,16 @@ function GameView(props) {
   const key = props.key
   const musicDelay = props.musicDelay
   const noteInterval = props.noteInterval
+  const [stats, setStats] = useState({
+    score: 0,
+    maxStreak: 0,
+    streak: 0,
+    multiplier: 1,
+    hits: 0,
+    misses: 0,
+    totalNotes: 0,
+    rockInput: 0
+  })
 
   const note = {}
 
@@ -125,8 +137,22 @@ function GameView(props) {
 
     const circleGeometry = new THREE.CircleGeometry(note.radius)
     const circles = []
+<<<<<<< Updated upstream
     for (let i = 0; i < 4; i++) {
       circles[i] = new THREE.Mesh(circleGeometry, note.materials[i])
+=======
+
+    const handImages = ['A_Hand.png', 'B_Hand.png', 'C_Hand.png', 'D_Hand.png']
+    const geometry = new THREE.CircleGeometry(30)
+
+    var textureImage, texture, material
+    for (let i = 0; i < 4; i++) {
+      textureImage = require('../images/' + handImages[i])
+      texture = new THREE.TextureLoader().load(textureImage)
+      material = new THREE.MeshBasicMaterial({ map: texture })
+      material.transparent = true
+      circles[i] = new THREE.Mesh(geometry, material)
+>>>>>>> Stashed changes
     }
 
     circles.forEach((circle, idx) => {
@@ -216,7 +242,9 @@ function GameView(props) {
           zStartPoint
         )
       }, time)
-      // gameNotes.setNoteCheck(songNote, time)
+      setStats(
+        setNoteCheck(noteInterval, musicDelay, key, songNote, time, stats)
+      )
     })
   }
 
@@ -297,7 +325,11 @@ function GameView(props) {
 
   setup()
 
-  return <div></div>
+  return (
+    <div>
+      <GameDetails stats={stats}></GameDetails>
+    </div>
+  )
 }
 
 export default GameView

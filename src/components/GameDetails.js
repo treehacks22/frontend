@@ -1,17 +1,18 @@
 import VideoStream from './VideoStream'
 
-function GameDetails() {
+function GameDetails(props) {
+  const stats = props.stats
   return (
-    <div>
+    <div className='game-holder'>
       <div class='game-details'>
         <div class='game-details'>
           <div class='game-details-left'>
-            <h1 class='score'>Score: {}</h1>
-            <h1 class='max-streak'>Max Streak: {}</h1>
+            <h1 class='score'>Score: {stats.score}</h1>
+            <h1 class='max-streak'>Max Streak: {stats.maxStreak}</h1>
           </div>
           <div class='game-details-right'>
-            <h1 class='multiplier'>Multiplier: {}X</h1>
-            <h1 class='streak'>Streak: {}</h1>
+            <h1 class='multiplier'>Multiplier: {stats.multiplier}X</h1>
+            <h1 class='streak'>Streak: {stats.streak}</h1>
           </div>
         </div>
       </div>

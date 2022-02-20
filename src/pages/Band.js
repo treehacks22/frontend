@@ -36,7 +36,6 @@ function Band() {
 
   return (
     <div>
-      <VideoStream />
       <div id='game-canvas'>
         <GameView
           startGame={startGame}

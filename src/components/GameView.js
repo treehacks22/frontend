@@ -322,7 +322,7 @@ function GameView(props) {
 
   return (
     <div>
-      {/* <VideoStream /> */}
+      <VideoStream />
       <GameDetails stats={stats}></GameDetails>
     </div>
   )

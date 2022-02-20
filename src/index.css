@@ -12,11 +12,11 @@ code {
     monospace;
 }
 
-/* #video-stream {
+#video-stream {
   position: absolute;
   bottom: 0;
   left: 0;
-} */
+}
 
 .test {
   position: absolute;
@@ -25,7 +25,7 @@ code {
 }
 
 #game-canvas {
-  position: relative;
+  position: absolute;
   height: 100%;
   width: 100%;
   display: flex;

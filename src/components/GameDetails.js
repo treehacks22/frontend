@@ -7,12 +7,12 @@ function GameDetails(props) {
       <div class='game-details'>
         <div class='game-details'>
           <div class='game-details-left'>
-            <h1 class='score'>Score: {stats.score}</h1>
-            <h1 class='max-streak'>Max Streak: {stats.maxStreak}</h1>
+            <h1 class='score'>Score: 0</h1>
+            <h1 class='max-streak'>Max Streak: 0</h1>
           </div>
           <div class='game-details-right'>
-            <h1 class='multiplier'>Multiplier: {stats.multiplier}X</h1>
-            <h1 class='streak'>Streak: {stats.streak}</h1>
+            <h1 class='multiplier'>Multiplier: 1X</h1>
+            <h1 class='streak'>Streak: 0</h1>
           </div>
         </div>
       </div>

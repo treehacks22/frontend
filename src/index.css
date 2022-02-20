@@ -11,3 +11,103 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#game-canvas {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding: 50px 20px 20px 20px;
+}
+
+.game-details-right,
+.game-details-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.score,
+.streak,
+.multiplier,
+.max-streak {
+  font-size: 28px;
+}
+
+.game-progress {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.rock-input {
+  background: transparent;
+}
+
+.rock-input::-webkit-slider-runnable-track {
+  background: white;
+}
+
+.red .rock-input::-webkit-slider-runnable-track {
+  background: red;
+}
+
+.green .rock-input::-webkit-slider-runnable-track {
+  background: green;
+}
+
+.yellow .rock-input::-webkit-slider-runnable-track {
+  background: yellow;
+}
+
+#song {
+  display: none;
+}
+
+.game-control-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-weight: 700;
+}
+
+.game-control-panel button {
+  width: 120px;
+  height: 25px;
+  border-radius: 7px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  background: #ffffff;
+}
+
+.game-control-panel button:hover {
+  background: #cfcfcf;
+  cursor: pointer;
+}

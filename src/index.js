@@ -6,9 +6,10 @@ import Band from './pages/Band'
 import Jam from './pages/Jam'
 import JamMenu from './pages/JamMenu'
 import './index.css'
+import RTCMesh from 'react-rtc-real';
+import RTCMain from 'react-rtc-real';
 
-import RTCMesh from './components/ReactRTC/RTCMesh.js';
-import RTCMain from './components/RTCMain.js';
+require('react-rtc-real/assets/index.css');
 
 const WEBSOCKET_URL = 'wss://192.168.0.17:4000/ws';
 

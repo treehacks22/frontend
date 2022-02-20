@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import VideoStream from '../components/VideoStream'
 import GameView from '../components/GameView'
+import VideoStream from '../components/VideoStream'
 
 function Band() {
   const noteInterval = 237.8
@@ -36,8 +36,8 @@ function Band() {
 
   return (
     <div>
+      <VideoStream />
       <div id='game-canvas'>
-        <VideoStream />
         <GameView
           startGame={startGame}
           renderer={renderer}

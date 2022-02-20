@@ -343,7 +343,7 @@ function VideoStream() {
   }
 
   return (
-    <div>
+    <div id='video-stream'>
       <button id='start' onClick={start}>
         Start
       </button>

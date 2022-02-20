@@ -1,3 +1,5 @@
+import VideoStream from './VideoStream'
+
 function GameDetails() {
   return (
     <div>

@@ -1,6 +1,7 @@
 import { useState, useImperativeHandle } from 'react'
 import * as THREE from 'three'
 import GameDetails from '../components/GameDetails'
+import VideoStream from '../components/VideoStream'
 import { songNotes, beatsPerMeasure } from '../lib/song'
 import { addLights } from '../utils/lighting'
 import { setNoteCheck } from '../utils/scoring'
@@ -321,6 +322,7 @@ function GameView(props) {
 
   return (
     <div>
+      {/* <VideoStream /> */}
       <GameDetails stats={stats}></GameDetails>
     </div>
   )

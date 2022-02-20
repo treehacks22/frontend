@@ -3,6 +3,12 @@
     src: url('Nightmare_Hero_Normal.ttf');
 }
 
-nav {
-    font-family: GuitarHero;
+@font-face {
+    font-family: Rocko;
+    src: url('rocko.ttf');
+}
+
+*{
+    margin:0;
+    padding:0;
 }

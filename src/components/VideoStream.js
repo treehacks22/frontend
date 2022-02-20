@@ -344,10 +344,10 @@ function VideoStream() {
 
   return (
     <div>
-      <button id='start' onClick='start()'>
+      <button id='start' onClick={start}>
         Start
       </button>
-      <button id='stop' style={{ display: 'none' }} onClick='stop()'>
+      <button id='stop' style={{ display: 'none' }} onClick={stop}>
         Stop
       </button>
       <div id='media' style={{ display: 'none' }}>
